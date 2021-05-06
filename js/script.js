@@ -1,11 +1,18 @@
 "use strict";
 //declear varables;
 var jungleInput = document.querySelector(" #home > .en textarea");
-var panelBtn = document.querySelectorAll("main .panels a");
-var panelTabs = document.querySelector(".panel-tabs");
+// let panelBtn = document.querySelectorAll("main .panels a");
+var panelTabs = document.querySelectorAll(".panels a");
 var jungleOutput = document.querySelector(" #home .jg textarea");
 var historyParentEl = document.querySelector("#history .history");
-//  history
+panelTabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () {
+        window.addEventListener('hashchange', function (e) {
+            panelTabs.forEach(function (tabs) { return tabs.classList.remove('active'); });
+            panelTabs[i].classList.add('active');
+        });
+    });
+});
 var histories = [], storage;
 storage = localStorage;
 // 
@@ -13,11 +20,11 @@ var save = function (input) {
     histories.push({
         data: input,
         time: new Date().toLocaleTimeString(),
-        date: new Date().toLocaleDateString()
+        date: new Date().toLocaleDateString(),
     });
     // storage.setItem("histories", JSON.stringify(histories));
     historyParentEl.innerHTML = "" + histories.map(function (history, i) {
-        return ("\n   <div class=\"history-card\">\n  <p class=\"text\">" + history.data + "</p>\n<div class=\"date\">\n    <div class=\"time\">" + history.time + "</div>\n    <div class=\"day\">" + history.date + "</div>\n</div>\n</div>\n");
+        return (("\n   <div class=\"history-card\">\n  <p class=\"text\">" + history.data + "</p>\n<div class=\"date\">\n    <div class=\"time\">" + history.time + "</div>\n    <div class=\"day\">" + history.date + "</div>\n</div>\n</div>\n").trim());
     });
     return histories;
 };
@@ -71,5 +78,10 @@ jungleInput.addEventListener("input", function (e) {
     update(e.target.value);
 });
 jungleInput.addEventListener("blur", function () {
-    save(jungleInput.value);
+    if (jungleInput.value.match(/^\s{0,}$/g)) {
+        return 0;
+    }
+    else {
+        save(jungleInput.value);
+    }
 });

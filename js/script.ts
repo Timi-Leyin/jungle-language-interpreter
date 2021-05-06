@@ -1,20 +1,35 @@
 
 //declear varables;
 let jungleInput:any = document.querySelector(" #home > .en textarea");
-let panelBtn = document.querySelectorAll("main .panels a");
-let panelTabs = document.querySelector(".panel-tabs");
+// let panelBtn = document.querySelectorAll("main .panels a");
+let panelTabs = document.querySelectorAll(".panels a");
 let jungleOutput:any = document.querySelector(" #home .jg textarea");
 let historyParentEl:Element | any = document.querySelector("#history .history");
 
+panelTabs.forEach((tab:Element, i:number)=>{
+tab.addEventListener('click',():void=>{
+  window.addEventListener('hashchange',e=>{
+  panelTabs.forEach((tabs)=> tabs.classList.remove('active'))
+  panelTabs[i].classList.add('active')
+  })
+})
+})
+
+
 //  history
-let histories:object[]=[], storage:Storage ;
+interface History{
+  data:string;
+  time?:string;
+  date?:any;
+}
+let histories:any[]=[], storage:Storage ;
 storage = localStorage;
 // 
 const save=(input: string):object[]=>{
   histories.push({
       data:input,
       time: new Date().toLocaleTimeString(),
-      date: new Date().toLocaleDateString()
+      date: new Date().toLocaleDateString(),
     });
   // storage.setItem("histories", JSON.stringify(histories));
 historyParentEl.innerHTML= `${
@@ -28,7 +43,7 @@ historyParentEl.innerHTML= `${
     <div class="day">${history.date}</div>
 </div>
 </div>
-`)
+`.trim())
 
 
 
@@ -102,5 +117,11 @@ jungleInput.addEventListener("input", (e:any) => {
 });
 
 jungleInput.addEventListener("blur",() => {
- save(jungleInput.value);
+
+  if(jungleInput.value.match(/^\s{0,}$/g)){
+    return 0
+  }else{
+
+    save(jungleInput.value);
+  }
 });

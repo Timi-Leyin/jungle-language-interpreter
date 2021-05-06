@@ -86,7 +86,6 @@ main .panels a{
     align-items: center;
     flex-direction: column;
 }
-main .panels a:hover,
 main .panels a.active{
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -94,6 +93,9 @@ main .panels a.active{
     color: rgb(167, 0, 78);
     background: rgba(255, 255, 255, 0.5);
  transform: translateX(10px);
+ }
+main .panels a:hover{
+    color: rgb(167, 0, 78);
  }
 
 
