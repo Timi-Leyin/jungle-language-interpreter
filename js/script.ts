@@ -6,22 +6,9 @@ let panelTabs = document.querySelectorAll(".panels a");
 let jungleOutput:any = document.querySelector(" #home .jg textarea");
 let historyParentEl:Element | any = document.querySelector("#history .history");
 
-panelTabs.forEach((tab:Element, i:number)=>{
-tab.addEventListener('click',():void=>{
-  window.addEventListener('hashchange',e=>{
-  panelTabs.forEach((tabs)=> tabs.classList.remove('active'))
-  panelTabs[i].classList.add('active')
-  })
-})
-})
 
 
 //  history
-interface History{
-  data:string;
-  time?:string;
-  date?:any;
-}
 let histories:any[]=[], storage:Storage ;
 storage = localStorage;
 // 
@@ -121,7 +108,6 @@ jungleInput.addEventListener("blur",() => {
   if(jungleInput.value.match(/^\s{0,}$/g)){
     return 0
   }else{
-
     save(jungleInput.value);
   }
 });
