@@ -5,6 +5,14 @@ var jungleInput = document.querySelector(" #home > .en textarea");
 var panelTabs = document.querySelectorAll(".panels a");
 var jungleOutput = document.querySelector(" #home .jg textarea");
 var historyParentEl = document.querySelector("#history .history");
+panelTabs.forEach(function (tab, i) {
+    tab.addEventListener('click', function () {
+        window.addEventListener('hashchange', function (e) {
+            panelTabs.forEach(function (tabs) { return tabs.classList.remove('active'); });
+            panelTabs[i].classList.add('active');
+        });
+    });
+});
 //  history
 var histories = [], storage;
 storage = localStorage;

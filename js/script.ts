@@ -6,7 +6,15 @@ let panelTabs = document.querySelectorAll(".panels a");
 let jungleOutput:any = document.querySelector(" #home .jg textarea");
 let historyParentEl:Element | any = document.querySelector("#history .history");
 
-
+panelTabs.forEach((tab:Element, i:number)=>{
+  tab.addEventListener('click',():void=>{
+    window.addEventListener('hashchange',e=>{
+    panelTabs.forEach((tabs)=> tabs.classList.remove('active'))
+    panelTabs[i].classList.add('active')
+    })
+  })
+  })
+  
 
 //  history
 let histories:any[]=[], storage:Storage ;
