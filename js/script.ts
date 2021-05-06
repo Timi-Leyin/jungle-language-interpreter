@@ -15,7 +15,6 @@ panelTabs.forEach((tab:Element, i:number)=>{
   })
   })
   
-
 //  history
 let histories:any[]=[], storage:Storage ;
 storage = localStorage;
