@@ -3,7 +3,7 @@
 var jungleInput = document.querySelector(" #home > .en textarea");
 var panelBtn = document.querySelectorAll("main .panels a");
 var panelTabs = document.querySelector(".panel-tabs");
-var jungleOutput = document.querySelector(" #home .en textarea");
+var jungleOutput = document.querySelector(" #home .jg textarea");
 var historyParentEl = document.querySelector("#history .history");
 //  history
 var histories = [], storage;
@@ -58,6 +58,6 @@ function update(arg) {
 jungleInput.addEventListener("input", function (e) {
     update(e.target.value);
 });
-jungleInput.addEventListener("blur", function (e) {
+jungleInput.addEventListener("blur", function () {
     //  save(jungleInput.value);
 });

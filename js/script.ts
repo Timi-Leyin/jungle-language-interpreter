@@ -3,7 +3,7 @@
 let jungleInput:any = document.querySelector(" #home > .en textarea");
 let panelBtn = document.querySelectorAll("main .panels a");
 let panelTabs = document.querySelector(".panel-tabs");
-let jungleOutput:any = document.querySelector(" #home .en textarea");
+let jungleOutput:any = document.querySelector(" #home .jg textarea");
 let historyParentEl = document.querySelector("#history .history");
 
 //  history
@@ -71,6 +71,6 @@ jungleInput.addEventListener("input", (e:any) => {
  update(e.target.value);
 });
 
-jungleInput.addEventListener("blur", (e:any) => {
+jungleInput.addEventListener("blur",() => {
 //  save(jungleInput.value);
 });
