@@ -164,7 +164,9 @@ background: rgba(255, 255, 255, 0.5);
 
 
  #history{
-     padding: 20px
+     padding: 20px;
+     display: flex;
+     flex-flow: column wrap;
  }
  #history.active{
      display: block;
