@@ -8,7 +8,19 @@ var historyParentEl = document.querySelector("#history .history");
 //  history
 var histories = [], storage;
 storage = localStorage;
-// storage.setItem("histories", JSON.stringify(histories));
+// 
+var save = function (input) {
+    histories.push({
+        data: input,
+        time: new Date().toLocaleTimeString(),
+        date: new Date().toLocaleDateString()
+    });
+    // storage.setItem("histories", JSON.stringify(histories));
+    historyParentEl.innerHTML = "" + histories.map(function (history, i) {
+        return (" <div class=\"history-card\">\n  <p class=\"text\">" + history.data + "</p>\n<div class=\"date\">\n    <div class=\"time\">" + history.time + "</div>\n    <div class=\"dae\">" + history.date + "</div>\n</div>\n  </div>");
+    });
+    return histories;
+};
 // JUNGLE LANGUAGE CLASS
 var Jungle = /** @class */ (function () {
     function Jungle(str) {
@@ -59,5 +71,5 @@ jungleInput.addEventListener("input", function (e) {
     update(e.target.value);
 });
 jungleInput.addEventListener("blur", function () {
-    //  save(jungleInput.value);
+    save(jungleInput.value);
 });

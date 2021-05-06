@@ -4,13 +4,44 @@ let jungleInput:any = document.querySelector(" #home > .en textarea");
 let panelBtn = document.querySelectorAll("main .panels a");
 let panelTabs = document.querySelector(".panel-tabs");
 let jungleOutput:any = document.querySelector(" #home .jg textarea");
-let historyParentEl = document.querySelector("#history .history");
+let historyParentEl:Element | any = document.querySelector("#history .history");
 
 //  history
-let histories=[], storage:Storage ;
+let histories:object[]=[], storage:Storage ;
 storage = localStorage;
-// storage.setItem("histories", JSON.stringify(histories));
+// 
+const save=(input: string):object[]=>{
+  histories.push({
+      data:input,
+      time: new Date().toLocaleTimeString(),
+      date: new Date().toLocaleDateString()
+    });
+  // storage.setItem("histories", JSON.stringify(histories));
+historyParentEl.innerHTML= `${
 
+  histories.map((history,i):string=>{
+
+  return (
+ ` <div class="history-card">
+  <p class="text">${history.data}</p>
+<div class="date">
+    <div class="time">${history.time}</div>
+    <div class="dae">${history.date}</div>
+</div>
+  </div>`
+  )
+
+
+
+})
+
+
+
+}`
+    
+
+  return histories
+}
 
 // JUNGLE LANGUAGE CLASS
 class Jungle {
@@ -72,5 +103,5 @@ jungleInput.addEventListener("input", (e:any) => {
 });
 
 jungleInput.addEventListener("blur",() => {
-//  save(jungleInput.value);
+ save(jungleInput.value);
 });
