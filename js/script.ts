@@ -20,16 +20,15 @@ const save=(input: string):object[]=>{
 historyParentEl.innerHTML= `${
 
   histories.map((history,i):string=>{
-
-  return (
- ` <div class="history-card">
+  return (`
+   <div class="history-card">
   <p class="text">${history.data}</p>
 <div class="date">
     <div class="time">${history.time}</div>
-    <div class="dae">${history.date}</div>
+    <div class="day">${history.date}</div>
 </div>
-  </div>`
-  )
+</div>
+`)
 
 
 

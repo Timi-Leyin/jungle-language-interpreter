@@ -5,7 +5,7 @@
 }
  
  body {
- font-family: 'Open Sans' ;
+ font-family:'Manrope', 'Open Sans' ;
 }
 
 #container{
@@ -179,6 +179,15 @@ background: rgba(255, 255, 255, 0.5);
      background: rgba(255, 255, 255, 0.5);
  }
 
-
+ #history .history-card .text{
+     font-weight: bolder;
+     font-size: 18px;
+ }
+ #history .history-card .date > *{
+     display: inline-block;
+     padding: 7px 7px 0 0;
+     font-size: bold;
+     transform: translateY(6px);
+ }
 
 

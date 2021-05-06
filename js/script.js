@@ -17,7 +17,7 @@ var save = function (input) {
     });
     // storage.setItem("histories", JSON.stringify(histories));
     historyParentEl.innerHTML = "" + histories.map(function (history, i) {
-        return (" <div class=\"history-card\">\n  <p class=\"text\">" + history.data + "</p>\n<div class=\"date\">\n    <div class=\"time\">" + history.time + "</div>\n    <div class=\"dae\">" + history.date + "</div>\n</div>\n  </div>");
+        return ("\n   <div class=\"history-card\">\n  <p class=\"text\">" + history.data + "</p>\n<div class=\"date\">\n    <div class=\"time\">" + history.time + "</div>\n    <div class=\"day\">" + history.date + "</div>\n</div>\n</div>\n");
     });
     return histories;
 };
