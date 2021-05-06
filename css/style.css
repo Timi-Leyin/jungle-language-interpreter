@@ -30,7 +30,8 @@ min-height: calc(100vh - 250px);
     max-width: 580px;    
     box-shadow: 2px 5px 20px rgba(51, 51, 51, 0.501);
 
-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 border-radius: 10px;
     background:rgba(255, 255, 255, 0.5)
 }
@@ -47,7 +48,8 @@ main .header{
     border-radius: 10px;
     width: calc(100% - 20px);
     background:rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+     backdrop-filter: blur(15px);
 }
 
 main .header .header__logo{
@@ -67,7 +69,8 @@ main .panels{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+     backdrop-filter: blur(20px);
     background: rgba(255, 255, 255, 0.5);
 }
 
@@ -85,6 +88,7 @@ main .panels a{
 }
 main .panels a:hover,
 main .panels a.active{
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     box-shadow: 2px 5px 20px rgba(51, 51, 51, 0.301);
     color: rgb(167, 0, 78);
@@ -112,7 +116,8 @@ border: none;
     padding: 10px;
     resize: none;
      background: rgba(255, 255, 255, 0.5);
-backdrop-filter: blur(50px);
+     -webkit-backdrop-filter: blur(20px);
+     backdrop-filter: blur(20px);
      font-family: inherit;
      transition: 0.5s
  }
@@ -132,7 +137,8 @@ padding:6px 10px;
 border-radius: 10px;
 background: rgb(167, 0, 78);
 color: #fff;
-backdrop-filter: blur(50px);
+-webkit-backdrop-filter: blur(10px);
+     backdrop-filter: blur(10px);
 }
  #home > div:first-child textarea{
    box-shadow:2px 4px 20px rgba(51, 51, 51, 0.301);
@@ -168,6 +174,7 @@ background: rgba(255, 255, 255, 0.5);
      margin: 10px 0;
 /*     margin: 0 20px;*/
      border-radius: 10px;
+     -webkit-backdrop-filter: blur(10px);
      backdrop-filter: blur(10px);
      background: rgba(255, 255, 255, 0.5);
  }

@@ -8,7 +8,7 @@ var historyParentEl = document.querySelector("#history .history");
 //  history
 var histories = [], storage;
 storage = localStorage;
-storage.setItem("histories", JSON.stringify(histories));
+// storage.setItem("histories", JSON.stringify(histories));
 // JUNGLE LANGUAGE CLASS
 var Jungle = /** @class */ (function () {
     function Jungle(str) {

@@ -7,9 +7,9 @@ let jungleOutput:any = document.querySelector(" #home .jg textarea");
 let historyParentEl = document.querySelector("#history .history");
 
 //  history
-let histories:[]=[], storage
+let histories=[], storage:Storage ;
 storage = localStorage;
-storage.setItem("histories", JSON.stringify(histories));
+// storage.setItem("histories", JSON.stringify(histories));
 
 
 // JUNGLE LANGUAGE CLASS
